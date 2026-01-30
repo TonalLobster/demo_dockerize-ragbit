@@ -7,8 +7,7 @@ services:
       - "8000:80"
     env_file:
       - ../../../.env
-    image:
-      - ragbitregistry36-fscag4f9ccadh4c3.azurecr.io/ragbit-backend:latest
+    image: ragbitregistry36-fscag4f9ccadh4c3.azurecr.io/ragbit-backend:latest
   
   frontend:
     build:
@@ -19,6 +18,5 @@ services:
     depends_on:
       - backend
     environment:
-      - API_URL=http://backend:8000
-    image:
-      - ragbitregistry36-fscag4f9ccadh4c3.azurecr.io/ragbit-frontend:latest
+      - API_URL=http://backend:80
+    image: ragbitregistry36-fscag4f9ccadh4c3.azurecr.io/ragbit-frontend:latest
